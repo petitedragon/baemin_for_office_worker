@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} baemin signup {% endblock %}
+{% block body %}
+<div class="container">
+      <form method="post" action="" class="form-signin">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign up</h2>
+        <! 아래 input 에서 id 를 name 으로 변경후에 views.py 의 User.objects.create_user 정상이 됨. >
+        <input type="text" name="username"
+          class="form-control" placeholder="Username" required="" autofocus="">
+        <input type="email" name="email"
+          class="form-control" placeholder="Email address" required="">
+        <input type="password" name="password"
+          class="form-control" placeholder="Password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+</div>
+{% endblock %}
